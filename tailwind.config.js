@@ -16,6 +16,11 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 25s linear infinite',
       },
+      fontFamily: {
+      nunito: ['Nunito', 'sans-serif'],
+      pacifico: ['Pacifico', 'cursive'],
+    },
+    
     },
   },
   plugins: [],

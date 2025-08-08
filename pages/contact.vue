@@ -1,38 +1,62 @@
 <template>
   <PageHeader title="Contact us" crumb="Contact" />
   <section class="py-20 px-4 md:px-20">
+    <!-- Top Title -->
     <div class="text-center mb-10">
-      <h5 class="text-orange-500 text-xl font-semibold">Contact Us</h5>
-      <h1 class="text-4xl md:text-5xl font-bold">Contact For Any Query</h1>
+      <div class="flex items-center justify-center gap-4 mb-2">
+        <span class="block h-[2px] w-10 bg-[#FEA116]"></span>
+        <h5 class="text-[#FEA116] text-[20px] font-pacifico">Contact Us</h5>
+        <span class="block h-[2px] w-10 bg-[#FEA116]"></span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold font-nunito">Contact For Any Query</h1>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
-      <div>
-        <i class="fas fa-envelope text-orange-500 text-3xl mb-2"></i>
-        <h4 class="text-xl font-bold text-orange-500">Booking</h4>
-        <p>book@example.com</p>
+    <!-- Contact Info Cards (Left-aligned fix) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <div class="text-left">
+        <div class="flex items-center mb-2">
+          <h4 class="text-xl font-bold text-[#FEA116] font-pacifico">Booking</h4>
+          <span class="ml-2 block h-[2px] w-10 bg-[#FEA116]"></span>
+        </div>
+        <div class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-envelope text-[#FEA116] text-xl"></i>
+          <p>book@example.com</p>
+        </div>
       </div>
-      <div>
-        <i class="fas fa-envelope text-orange-500 text-3xl mb-2"></i>
-        <h4 class="text-xl font-bold text-orange-500">General</h4>
-        <p>info@example.com</p>
+
+      <div class="text-left">
+        <div class="flex items-center mb-2">
+          <h4 class="text-xl font-bold text-[#FEA116] font-pacifico">General</h4>
+          <span class="ml-2 block h-[2px] w-10 bg-[#FEA116]"></span>
+        </div>
+        <div class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-envelope text-[#FEA116] text-xl"></i>
+          <p>info@example.com</p>
+        </div>
       </div>
-      <div>
-        <i class="fas fa-envelope text-orange-500 text-3xl mb-2"></i>
-        <h4 class="text-xl font-bold text-orange-500">Technical</h4>
-        <p>tech@example.com</p>
+
+      <div class="text-left">
+        <div class="flex items-center mb-2">
+          <h4 class="text-xl font-bold text-[#FEA116] font-pacifico">Technical</h4>
+          <span class="ml-2 block h-[2px] w-10 bg-[#FEA116]"></span>
+        </div>
+        <div class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-envelope text-[#FEA116] text-xl"></i>
+          <p>tech@example.com</p>
+        </div>
       </div>
     </div>
 
+    <!-- Map and Contact Form -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-      <!-- Google Map  -->
+      <!-- Google Map -->
       <iframe
         class="w-full h-96 rounded"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24164.204295089955!2d-74.0059414!3d40.7127753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250b9351e09c3%3A0x1a542541caef3e9f!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sin!4v1689938548372!5m2!1sen!2sin"
         allowfullscreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
 
       <!-- Contact Form -->
       <form class="space-y-4">
@@ -42,19 +66,22 @@
         </div>
         <input type="text" placeholder="Subject" class="input-style" />
         <textarea placeholder="Message" class="input-style h-40 resize-none"></textarea>
-        <button type="submit" class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition">SEND MESSAGE</button>
+        <button
+          type="submit"
+          class="w-full bg-[#FEA116] text-white px-6 py-3 squared transition hover:bg-[#ffc107]"
+        >
+          SEND MESSAGE
+        </button>
       </form>
     </div>
   </section>
-
-  <!-- Scroll to top -->
-  <button @click="scrollToTop" class="fixed bottom-6 right-6 bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <ScrollTop />
 </template>
 
 <script setup>
+import ScrollTop from '~/components/ScrollTop.vue'
 import PageHeader from '~/components/PageHeader.vue'
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }

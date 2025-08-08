@@ -22,6 +22,16 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { charset: 'utf-8' }
+      ],
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Pacifico&display=swap'
+        }
       ]
     }
   }

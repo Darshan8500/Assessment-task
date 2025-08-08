@@ -1,62 +1,123 @@
 <template>
-  <section class="py-20 bg-white">
+  <section class="py-16 lg:py-20 bg-white font-nunito">
     <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
-      
+
       <!-- Left: Image Grid -->
-      <div class="grid grid-cols-2 gap-4 w-full lg:w-1/2">
-        <img src="/images/about/about-1.jpg" alt="About 1" class="w-full rounded-lg animate-fadein delay-100" />
-        <img src="/images/about/about-2.jpg" alt="About 2" class="w-3/4 rounded-lg animate-fadein delay-300 mt-6" />
-        <img src="/images/about/about-3.jpg" alt="About 3" class="w-full rounded-lg animate-fadein delay-500" />
-        <img src="/images/about/about-4.jpg" alt="About 4" class="w-full rounded-lg animate-fadein delay-700 mt-6" />
+      <div class="grid grid-cols-2 sm:grid-cols-2 gap-4 w-full lg:w-1/2">
+        <div class="w-full aspect-square">
+          <img src="/images/about/about-1.jpg" alt="About 1"
+            class="w-full h-full object-cover Squared-lg animate-fadein delay-100" />
+        </div>
+        <div class="w-full aspect-square sm:w-3/4 mt-[20%] sm:mt-10">
+          <img src="/images/about/about-2.jpg" alt="About 2"
+            class="w-full h-full object-cover Squared-lg animate-fadein delay-300" />
+        </div>
+        <div class="w-full aspect-square sm:w-3/4 ml-auto">
+          <img src="/images/about/about-3.jpg" alt="About 3"
+            class="w-full h-full object-cover Squared-lg animate-fadein delay-500" />
+        </div>
+        <div class="w-full aspect-square">
+          <img src="/images/about/about-4.jpg" alt="About 4"
+            class="w-full h-full object-cover Squared-lg animate-fadein delay-700" />
+        </div>
       </div>
 
       <!-- Right: Text Content -->
-      <div class="lg:w-1/2 text-left">
-        <h5 class="text-orange-500 text-lg font-semibold uppercase mb-2">About Us</h5>
-        <h2 class="text-4xl font-bold mb-6 text-gray-800">Welcome to Restoran</h2>
+      <div class="w-full lg:w-1/2 text-left">
+        <!-- Section Title -->
+        <h5 class="text-[#FEA116] text-[20px] font-pacifico mb-4 flex items-center gap-3">
+          About Us
+          <span class="block h-[2px] w-16 bg-[#FEA116]"></span>
+        </h5>
 
-        <p class="mb-4 text-gray-600">
-          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.
+        <!-- Main Title -->
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 text-gray-900">
+          Welcome to
+          <i class="fa fa-utensils text-[#FEA116] mx-1"></i>
+          Restoran
+        </h2>
+
+        <!-- Description -->
+        <p class="mb-4 text-gray-600 leading-relaxed text-sm sm:text-base">
+          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
+          <br class="hidden sm:block" />
+          amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.
         </p>
-        <p class="mb-6 text-gray-600">
-          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet.
+        <p class="mb-8 text-gray-600 leading-relaxed text-sm sm:text-base">
+          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
+          <br class="hidden sm:block" />
+          amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
+          <br class="hidden sm:block" />
+          duo justo magna dolore erat amet.
         </p>
 
-        <!-- Experience & Chefs -->
-        <div class="flex gap-8 mb-6">
-          <div>
-            <h3 class="text-4xl font-bold text-orange-500">15</h3>
-            <p class="text-gray-700 leading-snug">
+        <!-- Stats with animated counters -->
+        <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 mb-8">
+          <div class="flex items-center border-l-4 border-[#FEA116] pl-4">
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-[#FEA116] mr-3">{{ experienceCount }}</h3>
+            <p class="text-gray-700 leading-snug text-sm sm:text-base">
               Years of<br />
-              Experience
+              <span class="font-bold">EXPERIENCE</span>
             </p>
           </div>
-          <div>
-            <h3 class="text-4xl font-bold text-orange-500">50</h3>
-            <p class="text-gray-700 leading-snug">
+          <div class="flex items-center border-l-4 border-[#FEA116] pl-4">
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-[#FEA116] mr-3">{{ chefsCount }}</h3>
+            <p class="text-gray-700 leading-snug text-sm sm:text-base">
               Popular<br />
-              Master Chefs
+              <span class="font-bold">MASTER CHEFS</span>
             </p>
           </div>
         </div>
 
-        <NuxtLink
-          to="/about"
-          class="inline-block bg-orange-500 text-white px-5 py-3 rounded hover:bg-orange-600 transition"
-        >
-          Read More
+        <!-- Button -->
+        <NuxtLink to="/about"
+          class="inline-block bg-[#FEA116] text-white px-6 py-3 rounded hover:bg-[#ffc107] transition text-sm sm:text-base">
+          READ MORE
         </NuxtLink>
       </div>
     </div>
   </section>
 </template>
 
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const experienceCount = ref(0)
+const chefsCount = ref(0)
+
+onMounted(() => {
+  const duration = 2000
+  const frameDuration = 1000 / 60
+  const totalFrames = Math.round(duration / frameDuration)
+
+  let frame = 0
+  const easeOutQuad = t => t * (2 - t)
+
+  const animate = () => {
+    frame++
+    const progress = easeOutQuad(frame / totalFrames)
+    experienceCount.value = Math.round(1 + (15 - 1) * progress)
+    chefsCount.value = Math.round(1 + (50 - 1) * progress)
+
+    if (frame < totalFrames) {
+      requestAnimationFrame(animate)
+    }
+  }
+
+  requestAnimationFrame(animate)
+})
+</script>
+
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 @keyframes fadein {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -71,12 +132,15 @@
 .delay-100 {
   animation-delay: 0.1s;
 }
+
 .delay-300 {
   animation-delay: 0.3s;
 }
-delay-500 {
+
+.delay-500 {
   animation-delay: 0.5s;
 }
+
 .delay-700 {
   animation-delay: 0.7s;
 }

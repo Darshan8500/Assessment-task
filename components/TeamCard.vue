@@ -1,9 +1,8 @@
 <template>
   <div
-    class="group relative bg-white rounded-lg shadow-lg p-6 text-center transition duration-300 overflow-hidden"
-  >
+    class="group bg-white rounded-lg shadow-lg p-6 pt-8 text-center transition-all duration-500 ease-in-out overflow-hidden relative">
     <!-- Chef Image -->
-    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden transition duration-300 transform group-hover:scale-110">
+    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden transition duration-300 transform group-hover:scale-105">
       <img :src="image" :alt="name" class="w-full h-full object-cover" />
     </div>
 
@@ -11,19 +10,16 @@
     <h5 class="text-lg font-bold text-gray-800 mt-4">{{ name }}</h5>
     <p class="text-sm text-gray-500">{{ designation }}</p>
 
-    <!-- Social Icons -->
-    <div
-      class="absolute bottom-0 left-0 w-full opacity-0 group-hover:opacity-100 transition duration-300 bg-primary py-2 flex justify-center space-x-4"
-    >
-      <a
-        v-for="(social, index) in socials"
-        :key="index"
-        :href="social.href"
-        class="text-white hover:text-gray-200 text-lg"
-        target="_blank"
-      >
-        <i :class="social.icon"></i>
-      </a>
+    <!-- Hidden space for social pills -->
+    <div class="mt-4 max-h-0 group-hover:max-h-16 transition-all duration-500 ease-in-out overflow-hidden">
+      <div class="flex justify-center items-end gap-4 mt-2">
+        <a v-for="(social, index) in socials" :key="index" :href="social.href" target="_blank" class="w-10 h-14 bg-[#FEA116] rounded-full flex items-center justify-center
+                 hover:bg-[#fdb147] transition duration-300 shadow-md" :style="{
+                  marginBottom: '-10px'  // simulate 25% pill hidden
+                }">
+          <i :class="social.icon" class="text-white text-lg"></i>
+        </a>
+      </div>
     </div>
   </div>
 </template>

@@ -1,9 +1,6 @@
 <template>
-  <button
-    v-show="showButton"
-    @click="scrollToTop"
-    class="fixed bottom-6 right-6 z-50 bg-orange-500 text-white p-3 rounded hover:bg-orange-600 transition"
-  >
+  <button v-show="showButton" @click="scrollToTop"
+    class="fixed bottom-6 right-6 z-50 bg-[#FEA116] text-white p-3 rounded hover:bg-[#ffc107] transition">
     <i class="fas fa-arrow-up"></i>
   </button>
 </template>

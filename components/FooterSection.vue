@@ -1,99 +1,110 @@
 <template>
-  <footer class="bg-[#0F172B] text-white pt-16 pb-10 px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+  <footer class="bg-[#0F172B] text-white font-nunito py-16 px-4 lg:px-24">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10" data-aos="fade-up">
 
-      <!-- Company -->
-      <div>
-        <h3 class="text-xl text-orange-500 font-bold mb-4 flex items-center gap-2">
-          Company <span class="block h-0.5 bg-orange-500 w-6 ml-2"></span>
-        </h3>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><i class="fas fa-angle-right mr-2"></i>About Us</li>
-          <li><i class="fas fa-angle-right mr-2"></i>Contact Us</li>
-          <li><i class="fas fa-angle-right mr-2"></i>Reservation</li>
-          <li><i class="fas fa-angle-right mr-2"></i>Privacy Policy</li>
-          <li><i class="fas fa-angle-right mr-2"></i>Terms & Condition</li>
-        </ul>
-      </div>
+        <!-- Company -->
+        <div>
+          <div class="flex items-center mb-6">
+            <h4 class="text-2xl font-[Pacifico] text-[#FEA116]">Company</h4>
+            <div class="w-12 border-t-2 border-[#FEA116] ml-3"></div>
+          </div>
+          <ul class="space-y-4 text-white/90">
+            <li>
+              <NuxtLink to="/about" class="flex items-center transition-transform duration-300 hover:translate-x-1">
+                <i class="fas fa-angle-right text-white mr-2"></i>About Us
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/contact" class="flex items-center transition-transform duration-300 hover:translate-x-1">
+                <i class="fas fa-angle-right text-white mr-2"></i>Contact Us
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/booking" class="flex items-center transition-transform duration-300 hover:translate-x-1">
+                <i class="fas fa-angle-right text-white mr-2"></i>Reservation
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="#index" class="flex items-center transition-transform duration-300 hover:translate-x-1">
+                <i class="fas fa-angle-right text-white mr-2"></i>Privacy Policy
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="#index" class="flex items-center transition-transform duration-300 hover:translate-x-1">
+                <i class="fas fa-angle-right text-white mr-2"></i>Terms & Condition
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
 
-      <!-- Contact -->
-      <div>
-        <h3 class="text-xl text-orange-500 font-bold mb-4 flex items-center gap-2">
-          Contact <span class="block h-0.5 bg-orange-500 w-6 ml-2"></span>
-        </h3>
-        <ul class="space-y-3 text-sm text-gray-300">
-          <li><i class="fas fa-map-marker-alt mr-2"></i>123 Street, New York, USA</li>
-          <li><i class="fas fa-phone-alt mr-2"></i>+012 345 67890</li>
-          <li><i class="fas fa-envelope mr-2"></i>info@example.com</li>
-        </ul>
-        <div class="flex gap-2 mt-4">
-          <a href="#" class="w-9 h-9 rounded-full border border-gray-400 text-center leading-9 hover:bg-orange-500 hover:border-orange-500">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="w-9 h-9 rounded-full border border-gray-400 text-center leading-9 hover:bg-orange-500 hover:border-orange-500">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="w-9 h-9 rounded-full border border-gray-400 text-center leading-9 hover:bg-orange-500 hover:border-orange-500">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="#" class="w-9 h-9 rounded-full border border-gray-400 text-center leading-9 hover:bg-orange-500 hover:border-orange-500">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+        <!-- Contact -->
+        <div>
+          <div class="flex items-center mb-6">
+            <h4 class="text-2xl font-[Pacifico] text-[#FEA116]">Contact</h4>
+            <div class="w-12 border-t-2 border-[#FEA116] ml-3"></div>
+          </div>
+          <p class="mb-3"><i class="fas fa-map-marker-alt text-white mr-2"></i>123 Street, New York, USA</p>
+          <p class="mb-3"><i class="fas fa-phone-alt text-white mr-2"></i>+012 345 67890</p>
+          <p class="mb-6"><i class="fas fa-envelope text-white mr-2"></i>info@example.com</p>
+          <div class="flex space-x-3">
+            <a href="#"
+              class="w-10 h-10 flex items-center justify-center border border-white rounded-full hover:bg-[#FEA116] transition"><i
+                class="fab fa-twitter"></i></a>
+            <a href="#"
+              class="w-10 h-10 flex items-center justify-center border border-white rounded-full hover:bg-[#FEA116] transition"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="#"
+              class="w-10 h-10 flex items-center justify-center border border-white rounded-full hover:bg-[#FEA116] transition"><i
+                class="fab fa-youtube"></i></a>
+            <a href="#"
+              class="w-10 h-10 flex items-center justify-center border border-white rounded-full hover:bg-[#FEA116] transition"><i
+                class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Opening -->
+        <div>
+          <div class="flex items-center mb-6">
+            <h4 class="text-2xl font-[Pacifico] text-[#FEA116]">Opening</h4>
+            <div class="w-12 border-t-2 border-[#FEA116] ml-3"></div>
+          </div>
+          <p class="mb-2">Monday - Saturday:</p>
+          <p class="mb-4 text-white/90">09AM - 09PM</p>
+          <p class="mb-2">Sunday:</p>
+          <p class="text-white/90">10AM - 08PM</p>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <div class="flex items-center mb-6">
+            <h4 class="text-2xl font-[Pacifico] text-[#FEA116]">Newsletter</h4>
+            <div class="w-12 border-t-2 border-[#FEA116] ml-3"></div>
+          </div>
+          <p class="mb-6 text-white/90">
+            Dolor amet sit justo amet elitr clita ipsum elitr est.
+          </p>
+          <div class="flex">
+            <input type="text" class="w-full px-4 py-2 rounded-l bg-white text-black" placeholder="Your email" />
+            <button class="bg-[#FEA116] hover:bg-[#ffc107] text-white px-6 rounded-r transition">SIGNUP</button>
+          </div>
         </div>
       </div>
 
-      <!-- Opening Hours -->
-      <div>
-        <h3 class="text-xl text-orange-500 font-bold mb-4 flex items-center gap-2">
-          Opening <span class="block h-0.5 bg-orange-500 w-6 ml-2"></span>
-        </h3>
-        <ul class="text-sm text-gray-300 space-y-2">
-          <li>
-            <strong>Monday - Saturday:</strong>
-            <br />
-            09AM - 09PM
-          </li>
-          <li>
-            <strong>Sunday:</strong>
-            <br />
-            10AM - 08PM
-          </li>
-        </ul>
-      </div>
-
-      <!-- Newsletter -->
-      <div>
-        <h3 class="text-xl text-orange-500 font-bold mb-4 flex items-center gap-2">
-          Newsletter <span class="block h-0.5 bg-orange-500 w-6 ml-2"></span>
-        </h3>
-        <p class="text-sm text-gray-300 mb-4">
-          Dolor amet sit justo amet elitr clita ipsum elitr est.
-        </p>
-        <div class="flex">
-          <input
-            type="email"
-            placeholder="Your email"
-            class="px-3 py-2 text-black rounded-l focus:outline-none"
-          />
-          <button class="bg-orange-500 text-white px-4 py-2 rounded-r hover:bg-orange-600">
-            SIGNUP
-          </button>
+      <!-- Bottom Footer -->
+      <div
+        class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-white/70 text-sm">
+        <div>
+          <p>© Your Site Name, All Right Reserved. Designed By <a href="#" class="underline text-white">HTML Codex</a>
+          </p>
+          <p>Distributed By <a href="#" class="underline text-white">ThemeWagon</a></p>
         </div>
-      </div>
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="border-t border-gray-600 mt-12 pt-6 text-sm text-gray-400 text-center">
-      <p>
-        © Your Site Name, All Right Reserved. Designed By
-        <a href="https://htmlcodex.com" target="_blank" class="text-white underline">HTML Codex</a><br />
-        Distributed By <a href="https://themewagon.com" target="_blank" class="text-white underline">ThemeWagon</a>
-      </p>
-      <div class="mt-4 flex justify-center gap-6">
-        <a href="#">Home</a>
-        <a href="#">Cookies</a>
-        <a href="#">Help</a>
-        <a href="#">FAQs</a>
+        <div class="flex gap-6">
+          <NuxtLink to="#" class="hover:text-white">Home</NuxtLink>
+          <NuxtLink to="#" class="hover:text-white">Cookies</NuxtLink>
+          <NuxtLink to="#" class="hover:text-white">Help</NuxtLink>
+          <NuxtLink to="#" class="hover:text-white">FAQs</NuxtLink>
+        </div>
       </div>
     </div>
   </footer>
